@@ -5,7 +5,7 @@ const typeRouter = require('../typeRouter')
 
 router.use('/types', typeRouter)
 router.get('/mail', companyController.getMail)
-router.get('/mail/:messageid', companyController.getMailgetMessage)
+router.get('/mail/:messageid', companyController.getMessage)
 
 router
     .route('/info/sendBCR')

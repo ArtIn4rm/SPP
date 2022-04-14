@@ -215,6 +215,9 @@ Big_company_request.belongsTo(Request)
 Request.hasOne(Company_request)
 Company_request.belongsTo(Request)
 
+Financial_reporting.hasOne(Big_company_request)
+Big_company_request.belongsTo(Financial_reporting)
+
 Request.hasOne(Credit_request)
 Credit_request.belongsTo(Request)
 
