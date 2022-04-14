@@ -8,6 +8,8 @@ class UserController{
     }
 
     async auth(req, res){
-        
+
     }
 }
+
+module.exports = new UserController()
