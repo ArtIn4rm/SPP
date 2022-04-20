@@ -63,7 +63,7 @@ const Income = sequelize.define('income', {
     summary_tax_payed: {type: DataTypes.NUMERIC, allowNull: false}
 })
 
-const Potential_pledge = sequelize.define('potential-pledge', {
+const Potential_pledge = sequelize.define('potential_pledge', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, allowNull: false},
     total_price: {type: DataTypes.NUMERIC, allowNull: false},
@@ -86,7 +86,6 @@ const M2M_credit_guarantor = sequelize.define('m2m_credit_guarantor', {})
 const Message = sequelize.define('message', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     from_who: {type: DataTypes.INTEGER, primaryKey: true},
-    sending_time: {type: DataTypes.TIME, allowNull: false},
     message_text: {type: DataTypes.STRING, allowNull: false}
 })
 
@@ -95,14 +94,8 @@ const Credit_history = sequelize.define('credit_hisory', {
     paid_time: {type: DataTypes.TIME, allowNull: true}
 })
 
-const Request = sequelize.define('request', {
+const Potential_credit_request = sequelize.define('potential_credit_request', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    sending_time: {type: DataTypes.TIME, allowNull: false}
-})
-
-const Request_status = sequelize.define('request_status', {
-    id: {type: DataTypes.SMALLINT, primaryKey: true, autoIncrement: true},
-    name: {type: DataTypes.STRING, allowNull: false}
 })
 
 const Big_company_request = sequelize.define('big_company_request', {
@@ -203,23 +196,23 @@ Credit_history.belongsTo(Borrower)
 Borrower.hasMany(Message)
 Message.belongsTo(Borrower)
 
-Borrower.hasMany(Request)
-Request.belongsTo(Borrower)
+Borrower.hasOne(Big_company_request)
+Big_company_request.belongsTo(Borrower)
 
-Request_status.hasMany(Request)
-Request.belongsTo(Request_status)
+Borrower.hasOne(Potential_credit_request)
+Potential_credit_request.belongsTo(Borrower)
 
-Request.hasOne(Big_company_request)
-Big_company_request.belongsTo(Request)
+Credit.hasOne(Potential_credit_request)
+Potential_credit_request.belongsTo(Credit)
 
-Request.hasOne(Company_request)
-Company_request.belongsTo(Request)
+Borrower.hasOne(Company_request)
+Company_request.belongsTo(Borrower)
 
 Financial_reporting.hasOne(Big_company_request)
 Big_company_request.belongsTo(Financial_reporting)
 
-Request.hasOne(Credit_request)
-Credit_request.belongsTo(Request)
+Borrower.hasOne(Credit_request)
+Credit_request.belongsTo(Borrower)
 
 Borrower.hasMany(Credit)
 Credit.belongsTo(Borrower)
@@ -238,6 +231,9 @@ Credit.belongsTo(Type)
 
 Borrower_level.hasMany(Type)
 Type.belongsTo(Borrower_level)
+
+Personality.hasOne(Guarantor)
+Guarantor.belongsTo(Personality)
 
 Guarantor.belongsToMany(Person, {through: M2M_person_guarantor})
 Person.belongsToMany(Guarantor, {through: M2M_person_guarantor})
@@ -262,8 +258,7 @@ module.exports = {
     M2M_credit_guarantor,
     Guarantor,
     Message,
-    Request,
-    Request_status,
+    Potential_credit_request,
     Big_company_request,
     Credit_request,
     Credit_request,

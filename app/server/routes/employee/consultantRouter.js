@@ -8,17 +8,17 @@ router.get('/vipreq/next', consultantController.vipreqNext)
 router.get('/vipreq/prev', consultantController.vipreqPrev)
 router.get('/vipreq/:id', consultantController.vipreqById)
 router.get('/vipreq/:id/check', consultantController.vipreqCheck)
-router.delete('/vipreq/:id/answer', consultantController.vipreqAnswer)
+router.post('/vipreq/:id/answer', consultantController.vipreqAnswer)
 
 router.get('/comreq/next', consultantController.comreqNext)
 router.get('/comreq/prev', consultantController.comreqPrev)
 router.get('/comreq/:id', consultantController.comreqById)
 router.get('/comreq/:id/check', consultantController.comreqCheck)
-router.delete('/comreq/:id/answer', consultantController.comreqAnswer)
+router.post('/comreq/:id/answer', consultantController.comreqAnswer)
 
 router.get('/creq/next', consultantController.comreqNext)
 router.get('/creq/prev', consultantController.comreqPrev)
 router.get('/creq/:id', consultantController.comreqById)
-router.delete('/creq/:id/answer', consultantController.comreqAnswer)
+router.post('/creq/:id/answer', consultantController.comreqAnswer)
 
 module.exports = router
