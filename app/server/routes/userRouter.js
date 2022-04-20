@@ -6,12 +6,14 @@ const companyRouter = require('./borrowers/companyRouter')
 const consultantRouter = require('./employee/consultantRouter')
 const inspectorRouter = require('./employee/inspectorRouter')
 const accountantRouter = require('./employee/accountantRouter')
+const authMd = require('../middleware/authMd')
+const checkRoleMd = require('../middleware/checkRoleMd')
 
 router.post('/registrate', userController.registrate)
 
 router.post('/login', userController.login)
 
-router.get('/auth', userController.auth)
+router.get('/auth', authMd, userController.auth)
 
 router.use('/person', personRouter)
 
