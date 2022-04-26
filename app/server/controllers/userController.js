@@ -17,7 +17,7 @@ class UserController{
         if(candidate){
             return next(ApiError.badRequest("email is using"))
         }
-        let hashPassword = await bcrypt.hash(password, 5)
+        let hashPassword = await bcrypt.hash(password, process.env.SALT)
         let user
         //todo
         const token = generateJwt(user.id, email, role)
