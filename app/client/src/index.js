@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import RequestState from './service/RequestState';
 import UserState from './service/UserState'
+import TypesState from './service/TypesState'
+import 'materialize-css'
 
 export const Context = createContext(null)
 
 ReactDOM.render(
   <Context.Provider value={{
     user: new UserState(),
-    request: new RequestState()
+    request: new RequestState(),
+    types: new TypesState()
   }}>
     <App />
   </Context.Provider>,
