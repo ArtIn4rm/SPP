@@ -7,7 +7,6 @@ import {useHistory} from 'react-router-dom'
 import {USER_ROUTE, TYPES_ROUTE, PERSON_ROUTE, COMPANY_ROUTE, CONSULTANT_ROUTE, 
     INSPECTOR_ROUTE, ACCOUNTANT_ROUTE} from '../utils/consts'
 
-    //-------------
 const NavBar = observer(() => {
     const {user} = useContext(Context)
     let history = useHistory()
