@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, {useState, useContext} from 'react';
 import { Context } from '../index';
 import {Form, Row, NavLink, Button, Container, Card} from 'react-bootstrap'
@@ -6,18 +5,11 @@ import {useLocation} from 'react-router-dom'
 import {USER_ROUTE} from '../utils/consts';
 import {login, register} from '../api/borrowersApi'
 import {useHistory} from 'react-router-dom'
-=======
-import React from 'react';
-import {Form, Row, NavLink, Button, Container, Card} from 'react-bootstrap'
-import {useLocation} from 'react-router-dom'
-import {USER_ROUTE} from '../utils/consts';
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
 
 const isCompany = window.localStorage.getItem('isCompany') !== null
 
 const Auth = () => {
     const isLogin = useLocation().pathname === USER_ROUTE + '/login'
-<<<<<<< HEAD
     let history = useHistory()
     let {user} = useContext(Context)
 
@@ -72,8 +64,6 @@ const Auth = () => {
     }
 
 
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
     return (
         <Container
         className='d-flex justify-content-center align-items-center'
@@ -83,22 +73,16 @@ const Auth = () => {
                 <Form className="d-flex flex-column">
                     <Form.Control
                     className="mt-3"
-<<<<<<< HEAD
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
                     placeholder="Enter email"/>
                 </Form>
                 <Form className="d-flex flex-column">
                     <Form.Control
                     className="mt-3"
-<<<<<<< HEAD
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
                     placeholder="Enter password"/>
                 </Form>
                 {!isLogin &&
@@ -107,21 +91,13 @@ const Auth = () => {
                         <Form className="d-flex flex-column">
                             <Form.Control
                             style={{width: 245}}
-<<<<<<< HEAD
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
                             placeholder="Name"/>
                         </Form>
                         <Form className="d-flex flex-column">
                             <Form.Control
                             style={{width: 245}}
-<<<<<<< HEAD
                             value={surname}
                             onChange={(e) => setSurname(e.target.value)}
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
                             placeholder="Surname"/>
                         </Form>
                     </Row>
@@ -129,21 +105,15 @@ const Auth = () => {
                         <Form className="d-flex flex-column">
                             <Form.Control
                             style={{width: 100}}
-<<<<<<< HEAD
                             value={seria}
                             onChange={(e) => setSeria(e.target.value)}
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
                             placeholder="Seria"/>
                         </Form>
                         <Form className="d-flex flex-column">
                             <Form.Control
                             style={{width: 390}}
-<<<<<<< HEAD
                             value={num}
                             onChange={(e) => setNum(e.target.value)}
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
                             placeholder="Number"/>
                         </Form>
                     </Row>
@@ -151,11 +121,8 @@ const Auth = () => {
                         <Form className="d-flex flex-column">
                             <Form.Control
                             style={{width: 502}}
-<<<<<<< HEAD
                             value={account}
                             onChange={(e) => setAccount(e.target.value)}
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
                             placeholder="Payment account"/>
                         </Form>
                     </Row>
@@ -163,31 +130,22 @@ const Auth = () => {
                         <Form className="d-flex flex-column">
                             <Form.Control
                             style={{width: 138}}
-<<<<<<< HEAD
                             value={city}
                             onChange={(e) => setCity(e.target.value)}
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
                             placeholder="City"/>
                         </Form>
                         <Form className="d-flex flex-column">
                             <Form.Control
                             style={{width: 240}}
-<<<<<<< HEAD
                             value={street}
                             onChange={(e) => setStreet(e.target.value)}
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
                             placeholder="Street"/>
                         </Form>
                         <Form className="d-flex flex-column">
                             <Form.Control
                             style={{width: 100}}
-<<<<<<< HEAD
                             value={building}
                             onChange={(e) => setBuilding(e.target.value)}
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
                             placeholder="Building"/>
                         </Form>
                     </Row>
@@ -211,21 +169,15 @@ const Auth = () => {
                         <Form className="d-flex flex-column">
                             <Form.Control
                             style={{width: 245}}
-<<<<<<< HEAD
                             value={company}
                             onChange={(e) => setCompany(e.target.value)}
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
                             placeholder="Company name"/>
                         </Form>
                         <Form className="d-flex flex-column">
                             <Form.Control
                             style={{width: 245}}
-<<<<<<< HEAD
                             value={id}
                             onChange={(e) => setId(e.target.value)}
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
                             placeholder="Company registration id"/>
                         </Form>
                     </Row>
@@ -242,13 +194,9 @@ const Auth = () => {
                             Register
                         </NavLink>
                     }
-<<<<<<< HEAD
                     <Button className="mt-3 ml-auto mr-auto pr-4 pl-4" variant={"outline-dark"}
                     onClick={isLogin ? log : reg}
                     >
-=======
-                    <Button className="mt-3 ml-auto mr-auto pr-4 pl-4" variant={"outline-dark"}>
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
                         {isLogin ? 'Enter' : 'Register'}</Button>
                 </Row>
             </Card>
