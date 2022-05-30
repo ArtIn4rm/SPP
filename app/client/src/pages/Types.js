@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, {useContext, useState} from 'react'
 import {Context} from '../index'
 import {Row, Select, Button, Container, Card, Carousel, ListGroup, FormText} from 'react-bootstrap'
@@ -45,28 +44,6 @@ const Types = observer(() => {
         }
     }
  
-=======
-import React, {useContext} from 'react'
-import {Row, Select, Button, Container, Card, Carousel, ListGroup, FormText} from 'react-bootstrap'
-import Form from 'react-bootstrap/Form'
-import {Context} from '../index'
-import {observer} from 'mobx-react-lite'
-import {useLocation} from 'react-router-dom'
-
-const Types = observer(() => {
-    const {types} = useContext(Context)
-    const location = useLocation().pathname
-    const isSend = location.indexOf('send') !== -1
-    const isId = (location.indexOf('types/') !== -1) && !isSend
-    const typeById = types.types.find(item=>item.id == location.substring(location.indexOf(':')+1))
-    const procents = []
-    if(isId){
-        for(let proc = typeById.procentPerYearLower*100; proc <= typeById.procentPerYearUpper*100; proc+=2) {
-            procents.push(proc)
-        }
-    }                               
-
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
     return (
         <Container className='d-flex justify-content-center align-items-center'
         style={{paddingLeft: 0}}>
@@ -74,7 +51,6 @@ const Types = observer(() => {
             <h1 style={{color: "#505050"}} className="ml-auto mr-auto mt-4">
                 {!isId ? 'Credit types' : `Get ${typeById.name.toLowerCase()}`}
             </h1>
-<<<<<<< HEAD
             <div className="types_block">
             {isId ? 
             <div style={{color: "#505050"}}>
@@ -166,13 +142,6 @@ const Types = observer(() => {
             </Carousel>
             }
             </div>
-            </Card>
-        </Container>
-    );
-});
-=======
->>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
-
             {isId ? 
             <div style={{color: "#505050"}}>
                 <h6 className="mr-auto ml-auto mt-4" style={{fontSize: 16, width: 600}}>{typeById.description}</h6>
