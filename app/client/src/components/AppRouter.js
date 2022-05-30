@@ -3,7 +3,7 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import { publicRoutes, personRoutes, companyRoutes, consultantRoutes, 
     inspectorRoutes, accountantRoutes} from '../routes';
 import { TYPES_ROUTE } from '../utils/consts';
-import Context from '../index'
+import {Context} from '../index'
 
 const AppRouter = () => {
     const {user} = useContext(Context)
