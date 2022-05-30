@@ -9,9 +9,15 @@ const Mail = observer(() => {
 
     
     return (
+<<<<<<< HEAD
         <>
             
         </>
+=======
+        <div>
+            Mail
+        </div>
+>>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
     );
 })
 

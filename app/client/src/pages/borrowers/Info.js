@@ -83,6 +83,7 @@ const Info = observer(() => {
     }
 
     return (
+<<<<<<< HEAD
         <>
             <Container className='d-flex justify-content-center align-items-center'
                 style={{paddingLeft: 0}}>
@@ -274,6 +275,11 @@ const Info = observer(() => {
             </Card>
             </Container>
         </>
+=======
+        <div>
+            Info
+        </div>
+>>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
     );
 })
 

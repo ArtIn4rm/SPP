@@ -121,6 +121,10 @@ export const consultantRoutes = [
         Component: Notics
     },
     {
+        path: CONSULTANT_ROUTE + '/mail',
+        Component: Notics
+    },
+    {
         path: CONS_VIPREQ_ROUTE + '/next',
         Component: VipRequests
     },

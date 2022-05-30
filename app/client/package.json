@@ -8,8 +8,13 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
     "bootstrap": "^4.6.1",
+<<<<<<< HEAD
     "dotenv": "^16.0.1",
     "jwt-decode": "^3.1.2",
+=======
+    "materialize": "^1.0.0",
+    "materialize-css": "^1.0.0-rc.2",
+>>>>>>> cfca8736f6fd785e125e417d658adaf4616a2a67
     "mobx": "^6.0.5",
     "mobx-react-lite": "^3.1.7",
     "react": "^17.0.1",
